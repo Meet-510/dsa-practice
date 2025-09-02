@@ -1,27 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//pass by value
-//pass by reference just add &
+pass by value
+pass by reference just add &
 
-// int dosomething(int arr[],int n){
-//    arr[0] += 100;
-//    cout << "value inside function" << arr[0];
+int dosomething(int arr[],int n){
+   arr[0] += 100;
+   cout << "value inside function" << arr[0];
  
-// }
-// int main(){
-//    int n = 5;
-//      int arr[n];
-//      for( int i =0; i <n; i++){
+}
+int main(){
+   int n = 5;
+     int arr[n];
+     for( int i =0; i <n; i++){
        
-//       cin>> arr[i];
-//       cout<< arr[i]<< endl;
+      cin>> arr[i];
+      cout<< arr[i]<< endl;
       
-//      }
-//      dosomething(arr,n);
-//        cout << "value inside main" << arr[0];
+     }
+     dosomething(arr,n);
+       cout << "value inside main" << arr[0];
 
-//    }
+   }
    
 void print1(int n){
    for (int i = 0 ; i <n ; i++){
