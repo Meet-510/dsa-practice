@@ -24,11 +24,3 @@ It is mainly for learning, improving problem-solving skills, and interview prepa
 - C++ (primary)
 
 ---
-
-## Usage
-
-```bash
-git clone https://github.com/<your-username>/dsa-practice.git
-cd dsa-practice
-g++ filename.cpp -o output && ./output
-```
