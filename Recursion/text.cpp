@@ -50,6 +50,35 @@ void sumPara( int i,int sum){
    }
    sumPara(i-1,sum + i);
 }
+// print sum of the first N numbers (functional way)
+
+int sumPara2(int n){
+   if(n == 0) return 0;
+   return n + sumPara2(n -1);
+}
+
+// print factorial (functional recursive way) 
+
+int fact(int n){
+   if(n == 0) return 1;
+   return n * fact(n -1);
+}
+
+void swapArr(int a[],int l, int r){
+   if(l>=r)return  ;
+   swap(a[l],a[r]);
+   swapArr(a,l+1,r-1);
+
+}
+
+int fibo(int n ){
+   if( n <= 1){
+      return n;
+   }
+   int last = fibo(n -1);
+   int slast = fibo(n -2);
+   return last + slast;
+}
 
 int main(){
    // for printFun 
@@ -62,11 +91,30 @@ int main(){
    // printBackDigit(n,n);
 
    // for printDigitBT 
-   int n ;
-   cin>>n;
+   
+   // cin>>n;
    // printDigitBT(n,n);
    // printBackDigitBT(n,n);
-   sumPara(n,0);
+   // sumPara(n,0);
+   // cout<<sumPara2(n);
+   // cout<<fact(n);
+   // int n ;
+   // cin>>n;
+   // int a[n];
+   // // Take input
+   //  for(int i = 0; i < n; i++) cin >> a[i];
+
+   //   // Call recursive function
+   //  swapArr(a, 0, n-1);
+
+   //      // Print reversed array
+
+   // for(int i = 0; i < n; i++) cout << a[i] << " ";
+   //  return 0;
+
+   // fibonacci
+   cout << fibo(4);
+   
 
 }
     
