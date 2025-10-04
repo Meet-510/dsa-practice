@@ -131,27 +131,146 @@ using namespace std;
 // 3 . Remove duplicate in-place sorted Array 
 // return unique element count 
 // input [1,1,2,2,3,3] out: [1,2,3] 
-int removeDuplicate(int arr[], int n){
-        int i =0;
-        for (int j = 1; j<n; j ++){
-            if(arr[i]!= arr[j]){
-                arr[i+1] = arr[j];
-                i ++;
-            }
+// int removeDuplicate(int arr[], int n){
+//         int i =0;
+//         for (int j = 1; j<n; j ++){
+//             if(arr[i]!= arr[j]){
+//                 arr[i+1] = arr[j];
+//                 i ++;
+//             }
 
-        }
+//         }
      
-        return i+1;
+//         return i+1;
 
-}
+// }
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for( int i=0; i< n; i++){
+//         cin>> arr[i];
+//     }
+//     cout<<removeDuplicate(arr,n);
+//     return 0;
+// }
+
+// 4 . rotate the array to left by position 
+// input : [ 1,2,3,4,5]
+// outpur = [2,3,4,5,1]
+
+// void rotateArrLeft(int arr[],int n){
+//     int temp = arr[0];
+//     for(int i= 1; i< n; i++){
+//         arr[i-1] = arr[i];
+//     }
+//     arr[n-1] = temp;
+  
+// }
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for( int i=0; i< n; i++){
+//         cin>> arr[i];
+//     }
+//     rotateArrLeft(arr,n);
+//     for (int i=0; i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     return 0;
+// }
+
+// 4 . rotate the array to left by Dth position 
+// D can be any 
+// D = 3 
+// input : [ 1,2,3,4,5,6,7]
+// outpur = [4,5,6,7,1,2,3]
+// void leftRotateByD(int arr[],int n,int d){
+//   reverse(arr, arr+d);
+//   reverse(arr+d, arr+n);
+//   reverse(arr,arr+n)  ;
+//   for(int i=0;i<n;i++){
+//         cout<< arr[i] << " ";
+//     }
+  
+// } 
+
+// int main(){
+//     int n ;
+//     cin>> n;
+//     int arr[n];
+//     for(int i =0; i< n; i++){
+//         cin>> arr[i];
+//     }
+//     int d;
+//     cin>>d;
+//     leftRotateByD(arr,n,d);
+    
+//     return 0;
+// }
+
+// 5. Move all zero to the end of ARRAY 
+
+// void MoveZeroToEnd(int arr[], int n){
+//     int j = -1;
+//     for (int i = 0 ; i < n ; i++){
+//         if( arr[i] == 0){
+//             j = i;
+//             break;
+//         }
+//     }
+
+//     for(int i = j+1; i< n ; i++){
+//             if (arr[i] !=2 0){
+//                 swap(arr[i],arr[j]);
+//                 j++;
+//             }
+//     }
+
+// }
+
+
+// int main(){
+//     int n ;
+//     cin>>n;
+//     int arr[n];
+//     for( int i =0; i < n ; i ++){
+//         cin>> arr[i];
+//     }
+//     MoveZeroToEnd(arr, n);
+//     for ( int i=0; i< n; i++){
+//         cout<< arr[i] << " ";
+//     }
+//     return 0;
+// }
+
+
+// 6 . Linear Search 
+// find element in array 
+
+void findElement(int arr[],int n , int num ){
+    for( int i =0; i < n ; i ++){
+        if ( arr[i] == num ){
+            cout<<" element fount at " << i;
+            return;
+        }   
+    } 
+    cout<<"Number not found";
+    }
+  
 
 int main(){
-    int n;
+    int n ;
     cin>>n;
     int arr[n];
-    for( int i=0; i< n; i++){
+    for( int i =0; i < n ; i ++){
         cin>> arr[i];
     }
-    cout<<removeDuplicate(arr,n);
+    int num ;
+    cin>> num;
+    findElement(arr, n , num);
     return 0;
 }
