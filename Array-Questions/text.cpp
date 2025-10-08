@@ -251,26 +251,121 @@ using namespace std;
 // 6 . Linear Search 
 // find element in array 
 
-void findElement(int arr[],int n , int num ){
-    for( int i =0; i < n ; i ++){
-        if ( arr[i] == num ){
-            cout<<" element fount at " << i;
-            return;
-        }   
-    } 
-    cout<<"Number not found";
-    }
+// void findElement(int arr[],int n , int num ){
+//     for( int i =0; i < n ; i ++){
+//         if ( arr[i] == num ){
+//             cout<<" element fount at " << i;
+//             return;
+//         }   
+//     } 
+//     cout<<"Number not found";
+//     }
   
+
+// int main(){
+//     int n ;
+//     cin>>n;
+//     int arr[n];
+//     for( int i =0; i < n ; i ++){
+//         cin>> arr[i];
+//     }
+//     int num ;
+//     cin>> num;
+//     findElement(arr, n , num);
+//     return 0;
+// }
+
+
+// 7. find the missing element from array 
+// array = [1,2,3,4,6]
+// ans = 5
+
+// brute force algo 
+
+// int findMissingEl(int arr[], int n){
+//     for ( int i= 1 ; i < n; i++){
+//          int flag =0;
+//         for (int j =0 ; j< n; j++ ){
+//             if(arr[j] == i){
+//                 flag =1;
+//                 break;
+//             }
+//         }
+//         if(flag == 0){
+//             return i;
+//         }
+//     }
+// }
+
+// now we are using the better option ( hashing)
+
+
+// int findMissingElHash( int arr[], int n){
+//     int hash[n+1] = {0};
+//     for (int i =0 ; i< n-1; i++){
+//         hash [ arr[i]] = 1;
+
+//     }
+//     for (int i = 1; i <n; i++){
+//         if (hash[i] == 0)
+//         return i;
+//     }
+
+// }
+
+// the best optimal solution ever for this prob 
+
+// int findMissingEloptimal( int arr[], int n){
+//     int sum = n * (n+1) / 2;
+//     int sum2 = 0;
+//     for ( int i =0; i< n-1; i++){
+//         sum2 += arr[i];
+//     }
+//     return(sum - sum2);
+// }
+
+// int main(){
+//     int n ;
+//     cin>>n;
+//     int arr[n];
+//     for( int i =0; i < n ; i ++){
+//         cin>> arr[i];
+//     }
+//     // for brute force algo 
+//     // cout<< findMissingEl(arr, n);
+//     // the better solution 
+//     // cout<< findMissingElHash(arr,n);
+//     // the best optimal solution 
+//     cout << findMissingEloptimal(arr, n);
+//     return 0;
+// }
+
+
+// 8 . find the maximum consecutive ones 
+// arr[ 1,1,1,0,1,1,0,1,1,1,1]
+// ans = 4
+
+int findMaxConOnes(int arr[],int n){
+    int maxi= 0;
+    int cnt = 0;
+    for (int i =0; i < n ; i ++){
+        if ( arr[i] == 1){
+            cnt++;
+            maxi = max(maxi, cnt); 
+        }
+        else cnt =0;
+    }
+    return maxi;
+}
 
 int main(){
     int n ;
-    cin>>n;
+    cin >> n;
     int arr[n];
-    for( int i =0; i < n ; i ++){
+    for(int i =0; i< n; i++){
         cin>> arr[i];
+
     }
-    int num ;
-    cin>> num;
-    findElement(arr, n , num);
+    cout << findMaxConOnes(arr, n);
     return 0;
 }
