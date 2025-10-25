@@ -345,27 +345,65 @@ using namespace std;
 // arr[ 1,1,1,0,1,1,0,1,1,1,1]
 // ans = 4
 
-int findMaxConOnes(int arr[],int n){
-    int maxi= 0;
-    int cnt = 0;
-    for (int i =0; i < n ; i ++){
-        if ( arr[i] == 1){
-            cnt++;
-            maxi = max(maxi, cnt); 
+// int findMaxConOnes(int arr[],int n){
+//     int maxi= 0;
+//     int cnt = 0;
+//     for (int i =0; i < n ; i ++){
+//         if ( arr[i] == 1){
+//             cnt++;
+//             maxi = max(maxi, cnt); 
+//         }
+//         else cnt =0;
+//     }
+//     return maxi;
+// }
+
+// int main(){
+//     int n ;
+//     cin >> n;
+//     int arr[n];
+//     for(int i =0; i< n; i++){
+//         cin>> arr[i];
+
+//     }
+//     cout << findMaxConOnes(arr, n);
+//     return 0;
+// }
+
+// find the longest sub array with sum k 
+// Input:
+// arr = [10, 5, 2, 7, 1, 9]
+// k = 15
+
+// Output:
+// 4
+
+int findLongestSubArr (int arr[], int n, int k){
+    int longlen = 0;
+    for( int i = 0 ; i < n; i++){
+        for ( int j = i; j < n; j ++){
+            int s = 0;
+            for (int k =i; k <=j; k ++){
+                s += arr[k];
+            }
+            if( s == k){
+                    longlen = max(longlen, j-i +1);
+            }   
+            
         }
-        else cnt =0;
+         
     }
-    return maxi;
+    return longlen;
 }
 
 int main(){
-    int n ;
-    cin >> n;
+    int n, k ;
+    cin>> n>> k;
     int arr[n];
-    for(int i =0; i< n; i++){
+    for( int i =0; i< n; i++){
         cin>> arr[i];
 
     }
-    cout << findMaxConOnes(arr, n);
+    cout<<findLongestSubArr(arr, n, k);
     return 0;
 }
