@@ -378,32 +378,65 @@ using namespace std;
 // Output:
 // 4
 
-int findLongestSubArr (int arr[], int n, int k){
-    int longlen = 0;
-    for( int i = 0 ; i < n; i++){
-        for ( int j = i; j < n; j ++){
-            int s = 0;
-            for (int k =i; k <=j; k ++){
-                s += arr[k];
-            }
-            if( s == k){
-                    longlen = max(longlen, j-i +1);
-            }   
+// int findLongestSubArr (int arr[], int n, int k){
+//     int longlen = 0;
+//     for( int i = 0 ; i < n; i++){
+//         for ( int j = i; j < n; j ++){
+//             int s = 0;
+//             for (int k =i; k <=j; k ++){
+//                 s += arr[k];
+//             }
+//             if( s == k){
+//                     longlen = max(longlen, j-i +1);
+//             }   
             
-        }
+//         }
          
-    }
-    return longlen;
-}
+//     }
+//     return longlen;
+// }
 
-int main(){
-    int n, k ;
-    cin>> n>> k;
-    int arr[n];
-    for( int i =0; i< n; i++){
-        cin>> arr[i];
+// int main(){
+//     int n, k ;
+//     cin>> n>> k;
+//     int arr[n];
+//     for( int i =0; i< n; i++){
+//         cin>> arr[i];
 
-    }
-    cout<<findLongestSubArr(arr, n, k);
-    return 0;
-}
+//     }
+//     cout<<findLongestSubArr(arr, n, k);
+//     return 0;
+// }
+
+
+// // 2 sum problem 
+// string read(int n, vector<int> book, int target){
+//     map<int,int> mpp;
+//     for(int i = 0; i< n; i++){
+//         int a= book[i];
+//         int more = target - a;
+//         if(mpp.find(more) != mpp.end()){
+//             return "Yes";
+//         }
+//         mpp[a] = i;
+//     }
+//     return "no";
+// }
+
+// int main() {
+//     int n, target;
+//     cin >> n;
+
+//     vector<int> book(n);
+   
+//     for (int i = 0; i < n; i++) {
+//         cin >> book[i];
+//     }
+//        cin >> target;
+
+//     string result = read(n, book, target);
+//     cout << "Result: " << result << endl;
+
+//     return 0;
+// }
+

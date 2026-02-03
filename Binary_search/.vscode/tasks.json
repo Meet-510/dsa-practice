@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "g++",
+      "args": ["text.cpp", "-o", "text.exe"]
+    },
+    {
+      "label": "Run with IO",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": ["/C", "text.exe < input.txt > output.txt"],
+      "dependsOn": "Build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
