@@ -15,7 +15,25 @@ public static void main(String[] args){
         salary = salary + 1000;
     }
     System.out.println(salary);
-    */
+   
+   for(int num=1;num <=5; num ++){
+    System.out.println(num);
+   }
+     */
 
+   Scanner in = new Scanner(System.in);
+   int a = in.nextInt();
+   int b = in.nextInt();
+   int c = in.nextInt();
+   int max = a;
+   if(b>max){
+    max = b;
+   }
+   if(c>max){
+    max=c;
+
+   }
+   System.out.println(max);
 }
 }
+
